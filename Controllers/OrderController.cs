@@ -20,11 +20,13 @@ namespace WebApplication1.Controllers
             return View(_repository.GetAllOrders());
         }
 
+        // GET: Order/Create
         public IActionResult Create()
         {
             return View();
         }
 
+        // POST: Order/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
         public IActionResult Create(Order order)
@@ -37,6 +39,16 @@ namespace WebApplication1.Controllers
             return View(order);
         }
 
+        // GET: Order/Edit/5
+        //public IActionResult Edit(int id)
+        //{
+        //    var order = _repository.GetOrderById(id);
+        //    if (order == null)
+        //    {
+        //        return NotFound();
+        //    }
+        //    return View(order);
+        //}
         public IActionResult Edit(int id)
         {
             var order = _repository.GetOrderById(id);
@@ -47,6 +59,8 @@ namespace WebApplication1.Controllers
             return View(order);
         }
 
+
+        // POST: Order/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
         public IActionResult Edit(int id, Order order)
