@@ -4,12 +4,11 @@
     <thead>
         <tr>
             <th>Id</th>
-            <th>Имя</th>
-            <th>Номер</th>
-            <th>Тип заказа </th>
-            <th>Дата заказа</th>
-            <th>Статус</th>
-            <th>Действия</th>
+            <th>FullName</th>
+            <th>PhoneNumber</th>
+            <th>OrderType</th>
+            <th>OrderDate</th>
+            <th>Status</th>
         </tr>
     </thead>
     <tbody>
@@ -22,14 +21,7 @@
                 <td>@order.OrderType</td>
                 <td>@order.OrderDate.ToShortDateString()</td>
                 <td>@order.Status</td>
-                <td>
-                    <a asp-action="Edit" asp-route-id="@order.Id">Редактировать</a>
-                </td>
             </tr>
         }
     </tbody>
 </table>
-
-<a asp-action="Create">Добавить новый заказ</a>
-<a asp-action="ByType" asp-route-orderType="Mmmm">Показать заказы типа Mmmm</a>
-

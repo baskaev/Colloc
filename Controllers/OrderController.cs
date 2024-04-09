@@ -39,7 +39,7 @@ namespace WebApplication1.Controllers
             return View(order);
         }
 
-        
+
         public IActionResult Edit(int id)
         {
             var order = _repository.GetOrderById(id);
@@ -54,12 +54,12 @@ namespace WebApplication1.Controllers
         // POST: Order/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Edit(int id, Order order)
+        public IActionResult Edit(/*int id,*/ Order order)
         {
-            if (id != order.Id)
-            {
-                return NotFound();
-            }
+            //if (id != order.Id)
+            //{
+            //    return NotFound();
+            //}
 
             if (ModelState.IsValid)
             {
@@ -70,5 +70,14 @@ namespace WebApplication1.Controllers
         }
 
         // Методы для Details и Delete можно добавить по аналогии с Create и Edit, если они нужны.
+
+
+        // GET: Order/ByType
+        public IActionResult ByType(string orderType)
+        {
+            var orders = _repository.GetAllOrders().Where(o => o.OrderType == orderType);
+            return View(orders);
+        }
+
     }
 }
