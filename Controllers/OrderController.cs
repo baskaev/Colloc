@@ -39,16 +39,7 @@ namespace WebApplication1.Controllers
             return View(order);
         }
 
-        // GET: Order/Edit/5
-        //public IActionResult Edit(int id)
-        //{
-        //    var order = _repository.GetOrderById(id);
-        //    if (order == null)
-        //    {
-        //        return NotFound();
-        //    }
-        //    return View(order);
-        //}
+        
         public IActionResult Edit(int id)
         {
             var order = _repository.GetOrderById(id);
